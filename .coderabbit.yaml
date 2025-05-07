@@ -1,0 +1,33 @@
+review:
+  enabled: true
+  languages:
+    - php
+    - javascript
+    - html
+  summarize: true
+
+style:
+  max_line_length: 120
+  indent_size: 4
+  enforce_strict_typing: false  # Laravel allows dynamic typing, so keep this flexible
+
+filters:
+  exclude_files:
+    - "*.md"
+    - "composer.lock"
+    - "public/**"
+    - "storage/**"
+    - "vendor/**"
+    - ".env"
+  exclude_folders:
+    - "tests/Feature/"
+    - "node_modules/"
+    - "bootstrap/cache/"
+
+comments:
+  language: en
+  tone: professional
+
+advanced:
+  model: gpt-4
+  confidence_threshold: 0.65  # Slightly lower for Laravel to catch more things
